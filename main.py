@@ -1,10 +1,10 @@
 import telebot, requests
 
-token = "1640367472:AAHzMg8kXOsIDoL4aLtBzmiBcBcsWiVI1TM"
+token = "..."
 bot = telebot.TeleBot(token, parse_mode=None)
 
-api_keyOne = "4d71e2ca78b19770ec229c75b21db70c"
-api_keyTwo = "a6ef7ec1f6c949ab82e7f582bac77c48"
+api_keyOne = "..."
+api_keyTwo = "..."
 
 base = {
 	"country_name": "", "main_temp": "", "feels_temp": "", "humidity": "",
