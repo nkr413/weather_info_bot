@@ -1,19 +1,28 @@
 import telebot, requests
 
-token = "..."
+token = "1640367472:AAHzMg8kXOsIDoL4aLtBzmiBcBcsWiVI1TM"
 bot = telebot.TeleBot(token, parse_mode=None)
 
-api_keyOne = "..."
-api_keyTwo = "..."
+api_keyOne = "4d71e2ca78b19770ec229c75b21db70c"
+api_keyTwo = "a6ef7ec1f6c949ab82e7f582bac77c48"
 
 base = {
-	"country_name": "", "main_temp": "", "feels_temp": "", "humidity": "",
-	"speed": "", "deg": "", "cloud": ""
+	"country_name": "", 
+	"main_temp": "", 
+	"feels_temp": "", 
+	"humidity": "",
+	"speed": "", 
+	"deg": "", 
+	"cloud": ""
 }
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.reply_to(message, "Отправьте мне название города и получите погоду")
+	bot.reply_to(message, "Отправьте мне название города и получите информацию о погоде\n\nSend me the name of the city and get weather information")
+
+@bot.message_handler(commands=['help'])
+def command_help(message):
+	bot.reply_to(message, "Additional Information\n\nBot creator: @nkr495\nBot repository: https://github.com/nkr413/weather_info_bot\nWeb version: https://nkr413.github.io/weather-info-2.0/\nBot username: @weather_infoo_bot")
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
